@@ -29,33 +29,33 @@
 
 @layer components {
   .form-btn {
-    @apply text-dark-100 inline-flex min-h-14 w-full items-center justify-center rounded-md bg-primary px-6 py-2 text-base font-bold hover:bg-primary !important;
+    @apply inline-flex min-h-14 w-full items-center justify-center rounded-md bg-primary px-6 py-2 text-base font-bold text-dark-100 hover:bg-primary !important;
   }
 
   .form-input {
-    @apply placeholder:text-light-100 bg-dark-300 min-h-14 w-full border-none text-base font-bold text-white placeholder:font-normal focus-visible:shadow-none focus-visible:ring-0 !important;
+    @apply min-h-14 w-full border-none bg-dark-300 text-base font-bold text-white placeholder:font-normal placeholder:text-light-100 focus-visible:shadow-none focus-visible:ring-0 !important;
   }
 
   /* Book Card */
   .book-title {
-    @apply xs:text-xl mt-2 line-clamp-1 text-base font-semibold text-white;
+    @apply mt-2 line-clamp-1 text-base font-semibold text-white xs:text-xl;
   }
 
   .book-genre {
-    @apply text-light-100 xs:text-base mt-1 line-clamp-1 text-sm italic;
+    @apply mt-1 line-clamp-1 text-sm italic text-light-100 xs:text-base;
   }
 
   .book-loaned {
-    @apply max-xs:justify-center flex flex-row items-center gap-1;
+    @apply flex flex-row items-center gap-1 max-xs:justify-center;
   }
 
   .book-btn {
-    @apply bg-dark-600 font-bebas-neue mt-3 min-h-14 w-full text-base text-primary;
+    @apply mt-3 min-h-14 w-full bg-dark-600 font-bebas-neue text-base text-primary;
   }
 
   /* Borrowed Book */
   .borrowed-book {
-    @apply gradient-vertical xs:w-min relative w-full rounded-2xl p-5;
+    @apply gradient-vertical relative w-full rounded-2xl p-5 xs:w-min;
   }
 
   .borrowed-book_cover {
@@ -76,16 +76,16 @@
   }
 
   .book-cover_regular {
-    @apply xs:w-[174px] xs:h-[239px] h-[169px] w-[114px];
+    @apply h-[169px] w-[114px] xs:h-[239px] xs:w-[174px];
   }
 
   .book-cover_wide {
-    @apply xs:w-[296px] xs:h-[404px] h-[354px] w-[256px];
+    @apply h-[354px] w-[256px] xs:h-[404px] xs:w-[296px];
   }
 
   /* Book List */
   .book-list {
-    @apply max-xs:justify-between xs:gap-10 mt-10 flex flex-wrap gap-5;
+    @apply mt-10 flex flex-wrap gap-5 max-xs:justify-between xs:gap-10;
   }
 
   /* Book Overview */
@@ -98,7 +98,7 @@
   }
 
   .book-info {
-    @apply text-light-100 mt-7 flex flex-row flex-wrap gap-4 text-xl;
+    @apply mt-7 flex flex-row flex-wrap gap-4 text-xl text-light-100;
   }
 
   .book-copies {
@@ -106,7 +106,7 @@
   }
 
   .book-copies p {
-    @apply text-light-100 text-xl;
+    @apply text-xl text-light-100;
   }
 
   .book-copies p span {
@@ -114,11 +114,11 @@
   }
 
   .book-description {
-    @apply text-light-100 mt-2 text-justify text-xl;
+    @apply mt-2 text-justify text-xl text-light-100;
   }
 
   .book-overview_btn {
-    @apply text-dark-100 mt-4 min-h-14 w-fit bg-primary hover:bg-primary/90 max-md:w-full !important;
+    @apply mt-4 min-h-14 w-fit bg-primary text-dark-100 hover:bg-primary/90 max-md:w-full !important;
   }
 
   /* File Upload */
@@ -131,34 +131,34 @@
   }
 
   .progress {
-    @apply font-bebas-neue text-light-100 rounded-full bg-green-800 p-0.5 text-center text-[8px] font-bold leading-none;
+    @apply rounded-full bg-green-800 p-0.5 text-center font-bebas-neue text-[8px] font-bold leading-none text-light-100;
   }
 
   /* Search */
   .search {
-    @apply bg-dark-300 relative mt-10 flex min-h-14 w-full items-center rounded-xl px-4;
+    @apply relative mt-10 flex min-h-14 w-full items-center rounded-xl bg-dark-300 px-4;
   }
 
   .search-input {
-    @apply placeholder:text-light-100 w-full border-none font-bold text-white placeholder:font-normal focus-visible:shadow-none focus-visible:ring-0 !important;
+    @apply w-full border-none font-bold text-white placeholder:font-normal placeholder:text-light-100 focus-visible:shadow-none focus-visible:ring-0 !important;
   }
 
   /* Book Receipt */
   .book-receipt_admin-btn {
-    @apply bg-light-300 text-primary-admin hover:bg-light-300/80 rounded-md font-semibold !important;
+    @apply rounded-md bg-light-300 font-semibold text-primary-admin hover:bg-light-300/80 !important;
   }
 
   /* Book Ticket */
   #book-ticket {
-    @apply bg-dark-300 relative mt-10 hidden w-[544px] overflow-hidden py-8;
+    @apply relative mt-10 hidden w-[544px] overflow-hidden bg-dark-300 py-8;
   }
 
   #book-ticket #book-details div {
-    @apply border-light-100/10 space-y-1 rounded-md border p-3;
+    @apply space-y-1 rounded-md border border-light-100/10 p-3;
   }
 
   #book-ticket #book-details div p:first-child {
-    @apply text-light-700 text-xs;
+    @apply text-xs text-light-700;
   }
 
   #book-ticket #book-details div p:last-child {
@@ -187,11 +187,11 @@
   }
 
   #not-found p {
-    @apply text-light-100 mt-1 w-[360px];
+    @apply mt-1 w-[360px] text-light-100;
   }
 
   .not-found-btn {
-    @apply font-bebas-neue text-dark-100 mt-6 min-h-12 min-w-[360px] bg-primary text-xl hover:bg-primary/90 !important;
+    @apply mt-6 min-h-12 min-w-[360px] bg-primary font-bebas-neue text-xl text-dark-100 hover:bg-primary/90 !important;
   }
 
   /* Pagination */
@@ -213,11 +213,11 @@
 
   /* Sort */
   .select-trigger {
-    @apply bg-dark-300 text-light-100 border-dark-100 h-10 w-40 px-4 !important;
+    @apply h-10 w-40 border-dark-100 bg-dark-300 px-4 text-light-100 !important;
   }
 
   .select-content {
-    @apply bg-dark-300 text-light-100 border-dark-100 !important;
+    @apply border-dark-100 bg-dark-300 text-light-100 !important;
   }
 
   .select-item {
@@ -240,11 +240,11 @@
 
   /* Auth */
   .auth-container {
-    @apply text-light-100 relative flex flex-col-reverse sm:flex-row;
+    @apply relative flex flex-col-reverse text-light-100 sm:flex-row;
   }
 
   .auth-form {
-    @apply bg-pattern bg-dark-100 my-auto flex h-full min-h-screen flex-1 items-center bg-cover bg-top px-5 py-10;
+    @apply my-auto flex h-full min-h-screen flex-1 items-center bg-dark-100 bg-pattern bg-cover bg-top px-5 py-10;
   }
 
   .auth-box {
@@ -257,7 +257,7 @@
 
   /* Root */
   .root-container {
-    @apply bg-pattern bg-dark-100 xs:px-10 flex min-h-screen flex-1 flex-col bg-cover bg-top px-5 md:px-16;
+    @apply flex min-h-screen flex-1 flex-col bg-dark-100 bg-pattern bg-cover bg-top px-5 xs:px-10 md:px-16;
   }
 
   /* Book Details */
@@ -275,11 +275,11 @@
   }
 
   .library-subtitle {
-    @apply text-light-100 text-lg font-semibold uppercase;
+    @apply text-lg font-semibold uppercase text-light-100;
   }
 
   .library-title {
-    @apply xs:text-5xl mt-2 text-3xl font-semibold text-white;
+    @apply mt-2 text-3xl font-semibold text-white xs:text-5xl;
   }
 }
 
