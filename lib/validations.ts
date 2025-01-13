@@ -12,3 +12,19 @@ export const SignInSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 });
+
+export const ConfigSchema = z.object({
+  IMAGEKIT_PRIVATE_KEY: z.string(),
+  DATABASE_URL: z.string(),
+});
+
+// const getServerConfig = () => {
+//   try {
+//     return ConfigSchema.parse(process.env);
+//   } catch (error) {
+//     console.error("❌ Invalid environment variables:", error);
+//     throw new Error("Invalid environment variables");
+//   }
+// };
+
+// export const serverConfig = getServerConfig();/file university-lib/
