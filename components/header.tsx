@@ -12,7 +12,6 @@ interface IHeader {
 }
 
 const Header = ({ session }: IHeader) => {
-  console.log(session.user);
   const pathName = usePathname();
   return (
     <header className="my-10 flex justify-between gap-5">
