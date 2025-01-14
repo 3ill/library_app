@@ -6,9 +6,18 @@ import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 import { hash } from "bcryptjs";
 import { eq } from "drizzle-orm";
+import { headers } from "next/headers";
+import ratelimit from "../rate-limit";
+import { redirect } from "next/navigation";
 
 export async function signup(params: IAuthentication) {
   const { fullName, email, universityId, password, universityCard } = params;
+
+  const ip = (await headers()).get("x-forwarded-for") || "127.0.0.1";
+  const { success } = await ratelimit.limit(ip);
+
+  if (!success) return redirect("/too-fast");
+
   const user = await db
     .select()
     .from(users)
@@ -52,6 +61,11 @@ export async function signInWithCredentials(
   const { email, password } = params;
 
   try {
+    const ip = (await headers()).get("x-forwarded-for") || "127.0.0.1";
+    const { success } = await ratelimit.limit(ip);
+
+    if (!success) return redirect("/too-fast");
+
     const result = await signIn("credentials", {
       email,
       password,
