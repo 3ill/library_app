@@ -22,3 +22,11 @@ interface IBookCover {
 }
 
 type BookCoverVariant = "extraSmall" | "small" | "medium" | "regular" | "wide";
+
+interface IAuthentication {
+  fullName: string;
+  email: string;
+  password: string;
+  universityId: number;
+  universityCard: string;
+}
