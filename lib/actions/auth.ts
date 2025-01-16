@@ -9,9 +9,12 @@ import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
 import ratelimit from "../rate-limit";
 import { redirect } from "next/navigation";
+import { QStashRepository } from "../workflow";
+import config from "../config";
 
 export async function signup(params: IAuthentication) {
   const { fullName, email, universityId, password, universityCard } = params;
+  const qStashRepo = new QStashRepository();
 
   const ip = (await headers()).get("x-forwarded-for") || "127.0.0.1";
   const { success } = await ratelimit.limit(ip);
@@ -40,6 +43,20 @@ export async function signup(params: IAuthentication) {
       universityId,
       password: hashedPassword,
       universityCard,
+    });
+
+    const workFlowClient = qStashRepo.getWorkFlowClient();
+    await workFlowClient.trigger({
+      url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
+      body: {
+        email,
+        fullName,
+      },
+    });
+
+    await signInWithCredentials({
+      email,
+      password,
     });
 
     return {
