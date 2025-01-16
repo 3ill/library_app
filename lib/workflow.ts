@@ -30,7 +30,7 @@ export class QStashRepository {
         provider: resend({ token: config.env.resendToken }),
       },
       body: {
-        from: "3illBaby <updates.dsacorp.xyz>",
+        from: "3illBaby <onboarding@resend.dev>",
         to: [email],
         subject,
         html: message,
