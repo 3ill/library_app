@@ -1,6 +1,7 @@
 import { Client as WorkFlowClient } from "@upstash/workflow";
 import { Client as QStashClient, resend } from "@upstash/qstash";
 import config from "./config";
+import { NEXT_CACHE_REVALIDATE_TAG_TOKEN_HEADER } from "next/dist/lib/constants";
 
 interface ISendEmail {
   email: string;
@@ -30,7 +31,7 @@ export class QStashRepository {
         provider: resend({ token: config.env.resendToken }),
       },
       body: {
-        from: "3illBaby <onboarding@resend.dev>",
+        from: "3illBaby <chikezie@dsacorp.xyz>",
         to: [email],
         subject,
         html: message,
